@@ -1,0 +1,58 @@
+для запуса web версии
+    python manage.py runserver 8080
+
+если не отображаются таблици в бд, при использовании команды python manage.py makemigrations
+    то надо указывать явные приложения python manage.py makemigrations car hors km
+    ps: проверить settings.py(переменная INSTALLED_APPS) в config, указаны ли все приложения
+
+[ ] pip install django djangorestframework psycopg (если не установлен)
+[ ] python manage.py makemigrations
+[ ] python manage.py migrate
+[ ] python manage.py createsuperuser (для админки)
+[ ] python manage.py runserver
+
+# Создайте миграции для всех приложений
+python manage.py makemigrations app1 app2 app3
+
+# Или для всех сразу
+python manage.py makemigrations
+
+# Примените миграции
+python manage.py migrate
+
+
+Поля бд
+текстовые поля
+    CharField - строка с ограничением длины - name = models.CharField(max_length=100)
+    TextField - длинны текст без ограничения - description = models.TextField()
+    EmailField - Email с валидацией - email = models.EmailField 
+
+числовые поля
+    IntegerField - целое число - age = models.IntegerField()
+    FloatField - Число с плавающей точкой - weight = models.FloatField()
+
+Дата и время
+    DateField - дата(без времени) - data = models.DateField()
+    DateTimeField - дата и время - create_at = models.DateTimeField(auto_now_add=True)
+    TimeField - время без даты - start_time = models.TimeField()
+
+Логические поля
+    BooleanField = True/False - is_activate = models.BooleanField(default=True)
+
+Спец поля 
+    UUIDField - уник. индефр. - id = models.UUIDField(default=uuid.uuid64, editable=Fasle)
+
+
+Node js
+npm create vite@latest
+y
+project name: client
+react
+JavaScript
+No
+No
+
+cd client
+npm install
+npm install axios
+nmp run dev
