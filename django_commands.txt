@@ -8,6 +8,8 @@
 создание проекта
     [ ] django-admin startproject config
 
+python manage.py startapp Server
+
 [ ] pip install django djangorestframework psycopg (если не установлен)
 [ ] python manage.py makemigrations
 [ ] python manage.py migrate
@@ -30,6 +32,8 @@ python manage.py migrate
     TextField - длинны текст без ограничения - description = models.TextField()
     EmailField - Email с валидацией - email = models.EmailField 
 
+price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00) # max_digits - максимальное количество цифр, decimal_places - количество цифр после запятой, default - значение по умолчанию
+
 числовые поля
     IntegerField - целое число - age = models.IntegerField()
     FloatField - Число с плавающей точкой - weight = models.FloatField()
@@ -44,6 +48,10 @@ python manage.py migrate
 
 Спец поля 
     UUIDField - уник. индефр. - id = models.UUIDField(default=uuid.uuid64, editable=Fasle)
+
+флаги
+    null=True - разрешает базе данных хранить NULL (пустое значение) в этом поле
+    blank=True - разрешает Django валидации пропускать это поле при заполнении форм (не требовать значение)
 
 
 Node js
