@@ -10,6 +10,8 @@ def collect_stats():
         "cpu": Status_Server()["cpu"],
         "ram": Status_Server()["ram"],
         # "IO": Status_Server()["IO"],
+        "Cpu_Info": Cpu_Info()["total_cores"],
+
     }
 
 while True:

@@ -2,7 +2,7 @@
 
 Admiral - херня для анализа и сбора инфы мониторинга и безопасности
 
-
+Подходит для OS Ubuntu / Debian
 
 создание ключа(запрос под win10)
     curl -X POST http://localhost:8080/api/register/ -H "Content-Type: application/json" -d "{\"name\": \"server-1\", \"install_token\": \"SUPER_SECRET_123\"}"
