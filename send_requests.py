@@ -1,6 +1,6 @@
 import time
 import requests
-from Status_system import Status_Server, System_Info, Cpu_Info, Ram_Info, Swap_Info
+from tools.Status_system import Status_Server, System_Info, Cpu_Info, Ram_Info, Swap_Info
 
 API_URL = "http://127.0.0.1:8080/api/stats/"
 API_KEY = "f03cbdecb1b228b5ab020adad9f3263efbc21c8a2ee0f0c8d381dcf5e360ca95"

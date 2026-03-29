@@ -8,16 +8,20 @@ class Server(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     ip = models.GenericIPAddressField(null=True, blank=True)
 
-    MAX_CPU = models.CharField(max_length=255, null=True, blank=True)
-    CPU = models.CharField(max_length=255, null=True, blank=True)
+    MAX_CPU_CORES = models.CharField(max_length=255, null=True, blank=True, help_text="Максимальное количество ядер CPU")
+    MAX_CPU_THREADS = models.CharField(max_length=255, null=True, blank=True, help_text="Максимальное количество потоков CPU")
+    CPU_NAME = models.CharField(max_length=255, null=True, blank=True)
+    
     MAX_RAM = models.CharField(max_length=255, null=True, blank=True)
-    RAM = models.CharField(max_length=255, null=True, blank=True)
-    MAX_GPU = models.CharField(max_length=255, null=True, blank=True)
-    GPU = models.CharField(max_length=255, null=True, blank=True)
-    MAX_SWAP = models.CharField(max_length=255, null=True, blank=True)
-    SWAP = models.CharField(max_length=255, null=True, blank=True)
-    MAX_DISK = models.CharField(max_length=255, null=True, blank=True)
-    DISK = models.CharField(max_length=255, null=True, blank=True)
+    RAM_CHARACTERISTICS = models.CharField(max_length=255, null=True, blank=True)
+    
+    MAX_GPU_THREADS = models.CharField(max_length=255, null=True, blank=True)
+    GPU_NAME = models.CharField(max_length=255, null=True, blank=True)
+    GPU_SIZE_GB = models.CharField(max_length=255, null=True, blank=True)
+
+    MAX_SWAP = models.CharField(max_length=255, null=True, blank=True, help_text="Максимальный объем SWAP памяти")
+    MAX_DISK = models.CharField(max_length=255, null=True, blank=True, help_text="Максимальный объем дискового пространства")
+    DISK_NAME = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
         return self.name

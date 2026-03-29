@@ -1,3 +1,7 @@
+настройка бд - https://metanit.com/python/django/5.9.php
+
+
+
 для запуса web версии
     python manage.py runserver 8080
 
