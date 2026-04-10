@@ -32,21 +32,21 @@
                 User_Swap: '1024'
             };
             
-            // try {
-            //     // ОТПРАВКА ДАННЫХ ТОЖЕ НА ПРАВИЛЬНЫЙ ПОРТ
-            //     const response = await fetch(`${API_BASE_URL}/api/stats/receive/`, {
-            //         method: 'POST',
-            //         headers: {
-            //             'Content-Type': 'application/json',
-            //         },
-            //         body: JSON.stringify(data)
-            //     });
+            try {
+                // ОТПРАВКА ДАННЫХ ТОЖЕ НА ПРАВИЛЬНЫЙ ПОРТ
+                const response = await fetch(`${API_BASE_URL}/api/stats/list/`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
                 
-            //     const result = await response.json();
-            //     console.log('Send result:', result);
-            // } catch (error) {
-            //     console.error('Error sending stat:', error);
-            // }
+                const result = await response.json();
+                console.log('Send result:', result);
+            } catch (error) {
+                console.error('Error sending stat:', error);
+            }
         }
         
         // Загружаем статистику при загрузке страницы
